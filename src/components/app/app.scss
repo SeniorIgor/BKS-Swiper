@@ -1,0 +1,34 @@
+//
+@import "../../styles/variables.scss";
+
+.app {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 32px 0;
+	width: 100%;
+	height: 100%;
+	background-color: $color_bg_light_gray;
+
+	&__wrap {
+		// padding: 0 32px;
+		width: 100%;
+		border-radius: 8px;
+		background-color: $color_white;
+	}
+
+	@media (max-width: 1535px) {
+		padding: 0;
+
+		&__wrap {
+			border-radius: 0;
+		}
+	}
+
+	@media (max-width: 767px) {
+		&__wrap {
+			// padding: 0 12px;
+			border-radius: 6px 6px 0 0;
+		}
+	}
+}

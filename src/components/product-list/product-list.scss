@@ -1,0 +1,194 @@
+//
+@import "../../styles/variables.scss";
+
+.product-list {
+	padding: 0 0 32px;
+
+	&__wrap {
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		padding: 0 0 32px;
+		width: 100%;
+	}
+
+	&__title {
+		padding: 0 0 0 32px;
+		max-width: 480px;
+		font-size: 44px;
+		line-height: 44px;
+		letter-spacing: -0.02em;
+	}
+
+	&__filters {
+	}
+
+	&__products {
+	}
+
+	@media (max-width: 1535px) {
+		padding: 0 0 24px;
+
+		&__header {
+			flex-direction: column;
+			padding: 0 0 24px;
+		}
+
+		&__title {
+			padding: 0 0 24px 32px;
+			font-size: 32px;
+			line-height: 32px;
+		}
+	}
+
+	@media (max-width: 767px) {
+		&__title {
+			padding: 0 12px 25px;
+			max-width: 100%;
+			font-size: 24px;
+			line-height: 24px;
+			letter-spacing: -0.015em;
+		}
+	}
+}
+
+.filters {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	min-width: 0;
+
+	&__btn-wrap {
+	}
+
+	&__btn {
+		flex-grow: 0;
+		padding: 20px 24px;
+		border: 1px solid $color_elem_gray;
+		border-radius: 8px;
+
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 16px;
+		letter-spacing: 0.2px;
+		text-transform: uppercase;
+
+		&_active {
+			border-color: $color_btn_active;
+			background-color: $color_btn_active;
+		}
+	}
+
+	@media (max-width: 1535px) {
+		justify-content: flex-start;
+
+		&__btn {
+			padding: 16px 20px;
+			font-size: 11px;
+			border-radius: 6px;
+		}
+	}
+
+	@media (max-width: 767px) {
+		&__btn {
+			padding: 14px 20px;
+			font-size: 9px;
+			border-radius: 4px;
+		}
+	}
+}
+
+.swiper-container {
+	margin: 0;
+	width: 100%;
+}
+
+.swiper-wrapper {
+	display: flex;
+}
+
+.swiper-slide {
+	width: auto !important;
+
+	.filters__btn-wrap {
+		padding: 0 16px 0 0;
+	}
+
+	&:last-child {
+		.filters__btn-wrap {
+			padding-right: 32px;
+		}
+	}
+
+	@media (max-width: 1535px) {
+		.filters__btn-wrap,
+		&:last-child .filters__btn-wrap {
+			padding: 0 12px 0 0;
+		}
+
+		&:first-child {
+			.filters__btn-wrap {
+				padding-left: 32px;
+			}
+		}
+	}
+
+	@media (max-width: 767px) {
+		.filters__btn-wrap {
+			padding: 0 9px 0 0;
+		}
+
+		&:first-child {
+			.filters__btn-wrap {
+				padding-left: 12px;
+			}
+		}
+	}
+}
+
+//   @media (min-width: 31.25em) {
+//     .swiper-wrapper {
+
+//       /* swiper is disabled at this breakpoint */
+//       /* wrap slides  */
+//       flex-wrap: wrap;
+
+//       width: 100%;
+//     }
+//   }
+
+//     @media (min-width: 31.25em) {
+//       .swiper-slide  {
+//         /* swiper is disabled at this breakpoint */
+//         /* going for a 2 column layout here */
+//         width: 50%;
+//       }
+//     }
+
+//     @media (min-width: 43.75em) {
+//       .swiper-slide  {
+//         /* upping it to a 3 column layout */
+//         width: 33.33333333333%;
+//       }
+//     }
+
+//     @media (min-width: 53em) {
+//       .swiper-slide  {
+//         /* and finally the 4 column layout */
+//         width: 25%;
+//       }
+//     }
+
+//     .swiper-pagination {
+//       /* show on small viewports */
+//       display: block;
+//     }
+
+//     @media (min-width: 31.25em) {
+//       .swiper-pagination {
+//         /* swiper is disabled at this breakpoint */
+//         display: none;
+//       }
+//     }

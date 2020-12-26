@@ -1,0 +1,17 @@
+//
+@import "../../styles/variables.scss";
+
+.main-page {
+	padding: 32px 32px 34px 32px;
+	width: 100%;
+	height: 100%;
+	background-color: $color_bg_light_gray;
+
+	&__wrap {
+		padding: 48px 32px 34px 32px;
+		background-color: $color_white;
+		width: 100%;
+		height: 100%;
+		border-radius: 8px;
+	}
+}

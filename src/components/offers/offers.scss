@@ -1,0 +1,111 @@
+//
+
+@import "./../../styles/variables.scss";
+
+.offers {
+	padding: 48px 0 104px 0;
+
+	&__wrap {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__column {
+		position: relative;
+		width: calc((100% - 210px) / 4);
+
+		&:not(:last-child)::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 1px;
+			height: 48px;
+			background-color: $color_elem_gray;
+		}
+	}
+
+	&__icon-wrap {
+		padding: 0 0 20px;
+	}
+
+	&__icon-image {
+		width: 44px;
+		height: 48px;
+
+		& > svg {
+			width: 44px;
+			height: 48px;
+		}
+	}
+
+	&__text-wrap {
+		width: 100%;
+	}
+
+	&__text {
+		max-width: 232px;
+		display: inline-block;
+	}
+
+	@media (max-width: 1535px) {
+		padding: 38px 0 48px;
+
+		&__wrap {
+			flex-wrap: wrap;
+		}
+
+		&__column {
+			padding-bottom: 44px;
+			width: calc(100% / 2);
+
+			&:not(:last-child)::after {
+				display: none;
+			}
+		}
+
+		&__text {
+			max-width: 224px;
+		}
+	}
+
+	@media (max-width: 767px) {
+		padding: 25px 0 36px;
+
+		&__wrap {
+			flex-direction: column;
+		}
+
+		&__column {
+			display: flex;
+			align-items: center;
+			padding: 0;
+			margin: 0 0 32px 0;
+			width: 100%;
+		}
+
+		&__icon-wrap {
+			padding: 0;
+		}
+
+		&__icon-image {
+			width: 25px;
+			height: 28px;
+
+			& > svg {
+				width: 25px;
+				height: 28px;
+			}
+		}
+
+		&__text-wrap {
+			padding: 0 0 0 24px;
+		}
+
+		&__text {
+			max-width: 100%;
+			font-size: 12px;
+			line-height: 14px;
+		}
+	}
+}
