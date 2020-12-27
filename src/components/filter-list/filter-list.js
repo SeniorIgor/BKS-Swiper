@@ -36,7 +36,7 @@ const FilterList = ({ filterId, updateFilter }) => {
 				watchOverflow={true}
 				breakpoints={{
 					320: {
-						spaceBetween: 9
+						spaceBetween: 8
 					},
 					767: {
 						spaceBetween: 12

@@ -47,7 +47,7 @@ const ProductList = ({ products, filterId, updateFilter }) => {
 								spaceBetween: 8
 							},
 							767: {
-								spaceBetween: 12
+								spaceBetween: 16
 							}
 						}}
 						pagination={{
