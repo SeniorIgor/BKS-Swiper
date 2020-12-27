@@ -10,8 +10,6 @@ import 'swiper/components/pagination/pagination.scss';
 
 import './product-list.scss';
 
-// ! шрифт 500
-
 SwiperCore.use([Pagination]);
 
 const ProductList = ({ products, filterId, updateFilter }) => {

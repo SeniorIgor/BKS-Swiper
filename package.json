@@ -3,10 +3,13 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
+	"homepage": "https://seniorigor.github.io/BKS-Swiper/",
 	"scripts": {
 		"dev": "webpack",
 		"build": "webpack --env.mode=production",
-		"start": "webpack-dev-server"
+		"start": "webpack-dev-server",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d dist"
 	},
 	"author": "Igor <igor.tyapkin1996@yandex.ru>",
 	"license": "ISC",
@@ -19,6 +22,7 @@
 		"clean-webpack-plugin": "^3.0.0",
 		"css-loader": "^4.3.0",
 		"file-loader": "^6.1.0",
+		"gh-pages": "^3.1.0",
 		"html-webpack-plugin": "^4.5.0",
 		"mini-css-extract-plugin": "^0.11.2",
 		"node-sass": "^4.14.1",
