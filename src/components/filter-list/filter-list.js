@@ -3,8 +3,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { filterListData } from '../../data';
 
-import 'swiper/swiper.scss';
-
 import './filter-list.scss';
 
 const FilterList = ({ filterId, updateFilter }) => {
