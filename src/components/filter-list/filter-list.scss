@@ -1,0 +1,51 @@
+//
+@import "../../styles/variables.scss";
+
+.filters {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	min-width: 0;
+	padding: 0 16px 0 32px;
+
+	// &__btn-wrap {
+	// }
+
+	&__btn {
+		flex-grow: 0;
+		padding: 20px 24px;
+		border: 1px solid $color_elem_gray;
+		border-radius: 8px;
+
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 16px;
+		letter-spacing: 0.2px;
+		text-transform: uppercase;
+
+		&_active {
+			border-color: $color_btn_active;
+			background-color: $color_btn_active;
+		}
+	}
+
+	@media (max-width: 1535px) {
+		justify-content: flex-start;
+
+		&__btn {
+			padding: 16px 20px;
+			font-size: 11px;
+			border-radius: 6px;
+		}
+	}
+
+	@media (max-width: 767px) {
+		padding: 0 12px;
+
+		&__btn {
+			padding: 14px 20px;
+			font-size: 9px;
+			border-radius: 4px;
+		}
+	}
+}

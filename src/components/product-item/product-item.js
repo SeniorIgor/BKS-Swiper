@@ -5,17 +5,17 @@ import './product-item.scss';
 const ProductItem = ({ product }) => {
 	const { title, image, color, isDesign, investTime, investAmount, benefit } = product;
 
-	const classNames = `product-item__header-icon ${(isDesign)
-		? 'product-item__header-icon_shadow' : ''}`;
+	const classNames = `product-item ${(isDesign)
+		? 'product-item_design' : ''}`;
 
 	return (
-		<div className="product-item" style={{ backgroundColor: color }}>
+		<div className={classNames} style={{ backgroundColor: color }}>
 			<div className="product-item__wrap">
 				<div className="product-item__header">
 					<div className="product-item__header-text">
 						<div className="product-item__header-title">{title}</div>
 					</div>
-					<div className={classNames}>
+					<div className="product-item__header-icon">
 						<div className="product-item__header-img">
 							{image}
 						</div>

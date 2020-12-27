@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Offers from '../offers';
-import ProductList from '../product-list';
+import ProductListContainer from '../../containers';
 
 import './app.scss';
 
@@ -12,7 +12,7 @@ const App = () => {
 			<div className="container">
 				<div className="app__wrap">
 					<Offers />
-					<ProductList />
+					<ProductListContainer />
 				</div>
 			</div>
 		</div>
