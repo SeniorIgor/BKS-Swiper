@@ -1,32 +1,23 @@
 import React, { Component } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore from 'swiper';
+import SwiperCore, { Pagination } from 'swiper';
+
+import ProductItem from '../product-item';
+import { filters, products } from '../../data';
 
 import 'swiper/swiper.scss';
+import 'swiper/components/pagination/pagination.scss';
 
 import './product-list.scss';
 
 // ! шрифт 500
 
-const filters = [
-	{
-		id: 1,
-		title: 'Гарантированная доходность',
-	},
-	{
-		id: 2,
-		title: 'Регулярная доходность',
-	},
-	{
-		id: 3,
-		title: 'Ставка на рост',
-	}
-]
+SwiperCore.use([Pagination]);
 
 export default class ProductList extends Component {
 
 	state = {
-		filterId: 1,
+		filterId: null,
 	}
 
 	toggleWidth(e) {
@@ -52,6 +43,16 @@ export default class ProductList extends Component {
 			);
 		});
 
+		const productsView = products
+			.filter(item => (!filterId) || item.filterId === filterId)
+			.map((item) => (
+				<SwiperSlide key={item.id}>
+					<div className="products__item">
+						<ProductItem product={item} />
+					</div>
+				</SwiperSlide>
+			));
+
 		return (
 			<div className="product-list" >
 				<div className="product-list__header">
@@ -61,32 +62,21 @@ export default class ProductList extends Component {
 						<Swiper tag="div"
 							grabCursor={true}
 							slidesPerView={'auto'}
-							// centeredSlides={true}
 							freeMode={true}
 							preventClicks={true}
-							// preventClicksPropagation={true}
-							// freeModeSticky={true}
-							// centerInsufficientSlides={true}
-							// normalizeSlideIndex={true}
-							// centerSlidesBounds={true}
-							// centeredSlides={true}
-							// spaceBetween={12}
 							updateOnWindowResize={true}
 							watchOverflow={true}
-						// slidesOffsetBefore={12}
-						// slidesOffsetAfter={12}
-						// breakpoints={{
-						// 	320: {
-						// 		slidesPerView: 'auto',
-						// 		// spaceBetween: 20
-						// 	},
-						// 	// when window width is >= 640px
-						// 	767: {
-						// 		slidesPerView: 3,
-						// 		allowTouchMove: false,
-						// 		slidesPerView: 'auto',
-						// 	}
-						// }}
+							breakpoints={{
+								320: {
+									spaceBetween: 9
+								},
+								767: {
+									spaceBetween: 12
+								},
+								1535: {
+									spaceBetween: 16
+								}
+							}}
 						>
 							{filtersView}
 						</Swiper>
@@ -94,9 +84,35 @@ export default class ProductList extends Component {
 					</div>
 				</div>
 				<div className="product-list__products">
-
+					<div className="product-list__products-wrap">
+						<Swiper tag="div"
+							grabCursor={true}
+							slidesPerView={'auto'}
+							spaceBetween={12}
+							preventClicks={true}
+							updateOnWindowResize={true}
+							watchOverflow={true}
+							breakpoints={{
+								320: {
+									spaceBetween: 8
+								},
+								767: {
+									spaceBetween: 12
+								}
+							}}
+							pagination={{
+								el: '.swiper-pagination',
+								clickable: true,
+							}}
+						>
+							{productsView}
+						</Swiper>
+						<div className="product-list__pagination">
+							<div className="swiper-pagination"></div>
+						</div>
+					</div>
 				</div>
-			</div>
+			</div >
 		)
 	}
 }
