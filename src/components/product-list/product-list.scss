@@ -1,5 +1,7 @@
 //
 @import "../../styles/variables.scss";
+@import "swiper/swiper.scss";
+@import "swiper/components/pagination/pagination.scss";
 
 .product-list {
 	padding: 0 0 32px;
@@ -27,6 +29,13 @@
 
 	&__products {
 		padding: 0 32px;
+	}
+
+	&__filters {
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-end;
+		min-width: 0;
 	}
 
 	&__pagination {
@@ -64,9 +73,13 @@
 			font-size: 32px;
 			line-height: 32px;
 		}
+		&__filters {
+			justify-content: flex-start;
+		}
 
 		&__pagination {
 			display: block;
+			opacity: 1;
 		}
 	}
 

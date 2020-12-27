@@ -5,8 +5,8 @@ import SwiperCore, { Pagination } from 'swiper';
 import ProductItem from '../product-item';
 import FilterList from '../filter-list';
 
-import 'swiper/swiper.scss';
-import 'swiper/components/pagination/pagination.scss';
+// import 'swiper/swiper.scss';
+// import 'swiper/components/pagination/pagination.scss';
 
 import './product-list.scss';
 
@@ -54,10 +54,11 @@ const ProductList = ({ products, filterId, updateFilter }) => {
 						}}
 					>
 						{productsView}
+
+						<div className="product-list__pagination">
+							<div className="swiper-pagination"></div>
+						</div>
 					</Swiper>
-					<div className="product-list__pagination">
-						<div className="swiper-pagination"></div>
-					</div>
 				</div>
 			</div>
 		</div >

@@ -2,10 +2,6 @@
 @import "../../styles/variables.scss";
 
 .filters {
-	display: flex;
-	justify-content: flex-end;
-	align-items: flex-end;
-	min-width: 0;
 	padding: 0 16px 0 32px;
 
 	// &__btn-wrap {
@@ -30,8 +26,6 @@
 	}
 
 	@media (max-width: 1535px) {
-		justify-content: flex-start;
-
 		&__btn {
 			padding: 16px 20px;
 			font-size: 11px;
